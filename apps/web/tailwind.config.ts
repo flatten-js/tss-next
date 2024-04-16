@@ -1,20 +1,17 @@
-import type { Config } from "tailwindcss";
+import type { Config } from "tailwindcss"
+
+import typographiesPreset from '@tss-next-ui/typographies/tailwind.config'
 
 const config: Config = {
+  presets: [
+    typographiesPreset
+  ],
   content: [
     "./pages/**/*.{js,ts,jsx,tsx,mdx}",
     "./components/**/*.{js,ts,jsx,tsx,mdx}",
     "./app/**/*.{js,ts,jsx,tsx,mdx}",
-  ],
-  theme: {
-    extend: {
-      backgroundImage: {
-        "gradient-radial": "radial-gradient(var(--tw-gradient-stops))",
-        "gradient-conic":
-          "conic-gradient(from 180deg at 50% 50%, var(--tw-gradient-stops))",
-      },
-    },
-  },
-  plugins: [],
-};
-export default config;
+    "./node_modules/@tss-next-ui/**/src/*.{js,ts,jsx,tsx,mdx}"
+  ]
+}
+
+export default config
