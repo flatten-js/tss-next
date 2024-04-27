@@ -10,6 +10,7 @@
   "scripts": {
     "preinstall": "npx -y only-allow pnpm",
     "dev": "turbo dev",
+    "storybook": "turbo storybook",
     "build": "turbo build"
   },
   "devDependencies": {
