@@ -1,0 +1,50 @@
+x-develop: &develop
+  watch:
+    - action: sync
+      path: ./packages
+      target: /app/packages
+      ignore:
+        - "**/package.json"
+    - action: sync
+      path: ./apps
+      target: /app/apps
+      ignore:
+        - "**/package.json"
+
+x-build: &build
+  build:
+    context: .
+    dockerfile: ./docker/Dockerfile
+  image: tss-next:latest
+
+
+services:
+  builder:
+    <<: [*build]
+    develop: 
+      watch:
+        - action: rebuild
+          path: .
+          target: /app
+          ignore: 
+            - "**"
+            - "!**/package.json"
+            - "!turbo.json"
+
+  web:
+    <<: [*build]
+    command: ["dev"]
+    ports:
+      - 127.0.0.1:3000:3000
+    depends_on:
+      - builder
+    develop: *develop
+
+  storybook:
+    <<: [*build]
+    command: ["storybook"]
+    ports:
+      - 127.0.0.1:6006:6006
+    depends_on:
+      - builder
+    develop: *develop
