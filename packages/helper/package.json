@@ -1,0 +1,5 @@
+{
+  "name": "@tss-next/helper",
+  "private": true,
+  "main": "src/index.ts"
+}

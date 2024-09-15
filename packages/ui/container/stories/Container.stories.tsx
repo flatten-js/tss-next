@@ -8,6 +8,14 @@ const meta: Meta<Container> = {
 
 type Story = StoryObj<Container>
 
-export const Default: Story = {}
+export const Default: Story = {
+  args: {
+    children: (
+      <>
+        <h1>TSS-Next</h1>
+      </>
+    )
+  }
+}
 
 export default meta

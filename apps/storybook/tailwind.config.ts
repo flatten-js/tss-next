@@ -1,11 +1,13 @@
 import type { Config } from "tailwindcss"
 
+import { generateTailwindContents } from '@tss-next/helper'
 import TypograhiesPreset from '@tss-next-ui/typographies/tailwind.config'
+
 
 const config: Config = {
   presets: [TypograhiesPreset],
   content: [
-    "./node_modules/@tss-next-ui/**/src/*.{ts,tsx}"
+    ...generateTailwindContents(__dirname, "./node_modules/@tss-next-ui")
   ]
 }
 

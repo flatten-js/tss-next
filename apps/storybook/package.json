@@ -27,6 +27,7 @@
     "@tss-next-ui/container": "workspace:^",
     "@tss-next-ui/styles": "workspace:^",
     "@tss-next-ui/typographies": "workspace:^",
+    "@tss-next/helper": "workspace:^",
     "postcss-load-config": "^5.0.3"
   }
 }

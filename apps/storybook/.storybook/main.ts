@@ -1,4 +1,17 @@
+import path from 'node:path'
+
 import type { StorybookConfig } from "@storybook/nextjs"
+import type { StoriesEntry } from '@storybook/types'
+import { generateDirectoryPaths } from '@tss-next/helper'
+
+
+function generateStories(dir: string, titlePrefix: string) {
+  return generateDirectoryPaths<StoriesEntry>((dirname: string, dir: string) => ({
+    directory: path.join(dirname, dir),
+    files: 'stories/*.stories.@(ts|tsx)',
+    titlePrefix
+  }), [__dirname, dir])
+}
 
 const config: StorybookConfig = {
   framework: {
@@ -6,11 +19,7 @@ const config: StorybookConfig = {
     options: {}
   },
   stories: [
-    {
-      directory: '../node_modules/@tss-next-ui',
-      files: '**/stories/*.stories.@(ts|tsx)',
-      titlePrefix: 'components'
-    }
+    ...generateStories('../node_modules/@tss-next-ui', 'components'),
   ],
   addons: [
     '@storybook/addon-onboarding',

@@ -17,6 +17,7 @@
     "@tss-next-ui/container": "workspace:^",
     "@tss-next-ui/styles": "workspace:^",
     "@tss-next-ui/typographies": "workspace:^",
+    "@tss-next/helper": "workspace:^",
     "@tss-next/tsconfig": "workspace:^",
     "@types/node": "^20",
     "@types/react": "^18",
