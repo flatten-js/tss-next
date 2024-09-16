@@ -1,4 +1,7 @@
 {
   "name": "@tss-next/tsconfig",
-  "private": true
+  "private": true,
+  "devDependencies": {
+    "@tsconfig/next": "^2.0.3"
+  }
 }

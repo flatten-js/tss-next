@@ -121,7 +121,11 @@ importers:
 
   packages/helper: {}
 
-  packages/tsconfig: {}
+  packages/tsconfig:
+    devDependencies:
+      '@tsconfig/next':
+        specifier: ^2.0.3
+        version: 2.0.3
 
   packages/ui/container:
     dependencies:
@@ -3075,6 +3079,10 @@ packages:
       '@testing-library/dom': '>=7.21.4'
     dependencies:
       '@testing-library/dom': 9.3.4
+    dev: true
+
+  /@tsconfig/next@2.0.3:
+    resolution: {integrity: sha512-b4aKvmdWnv9aUy+NStUFlefirk3SItW20OJtbi5/ue9oMRaQtUYbN5zsr7OmV3rlx6Gp6h7A82gPoCXhrNGVPQ==}
     dev: true
 
   /@types/aria-query@5.0.4:
